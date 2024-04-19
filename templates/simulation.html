@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Safety</title>
+    <style>
+        video {
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <a href="/">back</a>
+    <video controls >
+        <source src="{{ url_for('static', filename=video_path) }}" type="video/mp4">
+        Video not supported
+    </video>
+</body>
+</html>

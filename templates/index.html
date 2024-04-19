@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/media.css"> -->
+    <style>
+        :root {
+            --main-color: #6ebdf1;
+        }
+
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .clr {
+            clear: both;
+        }
+
+        .cotainer {
+            width: 90%;
+            margin: auto;
+        }
+
+        body {
+            font-family: "Rubik", sans-serif;
+        }
+
+        ::-webkit-scrollbar {
+            width: 1em;
+        }
+
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px var(--main-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--main-color);
+            border-radius: 5px;
+        }
+
+        ::selection {
+            color: #fff;
+            background-color: #43a9ed;
+        }
+
+        .button-hover {
+            box-shadow: 0 0 0 0.1em inset var(--main-color);
+            --_g: linear-gradient(var(--main-color) 0 0) no-repeat;
+            background: var(--_g) calc(var(--_p, 0%) - 100%) 0%,
+                var(--_g) calc(200% - var(--_p, 0%)) 0%,
+                var(--_g) calc(var(--_p, 0%) - 100%) 100%,
+                var(--_g) calc(200% - var(--_p, 0%)) 100%;
+            background-size: 50.5% calc(var(--_p, 0%) / 2 + 0.5%);
+            outline-offset: 0.1em;
+            transition: background-size 0.4s, background-position 0s 0.4s;
+        }
+
+        .button-hover:hover {
+            --_p: 100%;
+            transition: background-position 0.4s, background-size 0s;
+        }
+
+        .button-hover:active {
+            background-color: var(--c);
+            color: #fff;
+        }
+
+        /* welcome section */
+
+        .welcome {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            margin: auto;
+            height: auto;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .welcome-img {
+            width: 100%;
+        }
+
+        .welcome-text {
+            width: 100%;
+            text-align: center;
+        }
+
+        .welcome-img img {
+            width: 100%;
+        }
+
+        .welcome-text span {
+            color: var(--main-color);
+        }
+
+        .welcome-text h1 {
+            font-size: 50px;
+            margin-bottom: 50px;
+        }
+
+        .welcome-text p {
+            width: 100%;
+            line-height: 25px;
+        }
+
+        .welcome-text button {
+            background-color: transparent;
+            padding: 7px 15px;
+            font-weight: bolder;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            margin-top: 50px;
+        }
+
+        /* form */
+
+        form {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 90%;
+            margin: auto;
+            row-gap: 20px;
+        }
+
+        form h1 {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .model-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        .model-card {
+            width: 100%;
+            background-color: var(--main-color);
+            text-align: center;
+        }
+
+        .model-card h3 {
+            margin: 10px 0;
+        }
+
+        .model-card p {
+            margin-top: 20px;
+        }
+
+        .model-card img {
+            width: 98%;
+        }
+
+        .model-card input[type="file"] {
+            margin: 20px 0;
+            cursor: pointer;
+            margin-left: 20%;
+        }
+
+        .model-card input[type="file"]::file-selector-button {
+            color: #000;
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            font-weight: bolder;
+            transition: color .3s;
+        }
+
+        .model-card input[type="file"]::file-selector-button:hover {
+            color: var(--main-color);
+        }
+
+
+        form button {
+            display: block;
+            margin: 50px auto;
+            background-color: transparent;
+            padding: 7px 15px;
+            font-weight: bolder;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            margin-top: 50px;
+        }
+
+        /* sm */
+        @media (min-width: 640px) {
+            .model-card {
+                width: 49%;
+            }
+
+        }
+
+
+        /* md */
+        @media (min-width: 768px) {}
+
+        /* lg */
+        @media (min-width: 1024px) {}
+
+        /* xl */
+        @media (min-width: 1280px) {
+            .welcome {
+                flex-direction: row;
+                height: 100vh;
+            }
+
+            .welcome-img {
+                width: 55%;
+            }
+
+            .welcome-text {
+                width: 45%;
+                text-align: left;
+            }
+
+            .welcome-text p {
+                width: 80%;
+            }
+
+            .model-card {
+                width: 24%;
+            }
+        }
+
+        /* lg */
+        @media (min-width: 1536px) {}
+    </style>
+    <title>Driver Safety</title>
+</head>
+
+<body>
+    <div class="welcome">
+        <div class="welcome-text">
+            <h1>Drive <span>Safety</span></h1>
+            <p>computer vision model that monitors the driver's behavior and the road
+                environment in real-time. It detects if the driver is not focused, distracted (looking away or engaging
+                in other activities), or if there is an obstacle within a specified distance. In these cases, the model
+                can provide warnings to the driver. Additionally, it can detect signs of anger to calm the driver down
+                and suggest a break or playing soothing music. Furthermore, the model can detect if the driver falls
+                asleep or experiences a blackout. In such instances, the system can send a message to a designated
+                contact to notify them of the driver's condition.</p>
+            <button class="button-hover" onclick="scrollToDiv('form')">upload your data</button>
+        </div>
+        <div class="welcome-img">
+            <img src="{{ url_for('static', filename='images/accident2.jpg') }}" alt="accident image">
+        </div>
+    </div>
+
+    <form name="data-form" onsubmit="return validateForm()" enctype="multipart/form-data" method="post" action="{{ url_for('simulation') }}">
+        <h1>Upload your data to start simulation</h1>
+        <div class="model-card">
+            <h3>emotion detection video</h3>
+            <img src="{{ url_for('static', filename='images/emotion.png') }}" alt="">
+            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, perspiciatis.</p> -->
+            <input type="file" name="emotion-video" id="emotion-video" accept="video/*">
+        </div>
+        <div class="model-card">
+            <h3>Drowsiness Detection video</h3>
+            <img src="{{ url_for('static', filename='images/drowsy2.jpg') }}" alt="">
+            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, perspiciatis.</p> -->
+            <input type="file" name="drowsiness-video" id="drowsiness-video" accept="video/*">
+        </div>
+        <div class="model-card">
+            <h3>Depth Estimation video</h3>
+            <img src="{{ url_for('static', filename='images/road2.jpg') }}" alt="">
+            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, perspiciatis.</p> -->
+            <input type="file" name="depth-video" id="depth-video" accept="video/*">
+        </div>
+        <div class="model-card">
+            <h3>Distraction Detection video</h3>
+            <img src="{{ url_for('static', filename='images/driver distraction2.jpg') }}" alt="">
+            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, perspiciatis.</p> -->
+            <input type="file" name="distraction-video" id="distraction-video" accept="video/*">
+        </div>
+        <button class="button-hover">Start Simulation</button>
+    </form>
+    <script>
+        function scrollToDiv(className) {
+            const element = document.querySelector(className);
+
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+
+        function validateForm() {
+            let emotionVideo = document.getElementById("emotion-video").value;
+            let drowsinessVideo = document.getElementById("drowsiness-video").value;
+            let depthVideo = document.getElementById("depth-video").value;
+            let distractionVideo = document.getElementById("distraction-video").value;
+
+            let videoExtensionRegex = /\.(mp4|mov|avi|wmv)$/i;
+
+            if (
+                emotionVideo === "" ||
+                !videoExtensionRegex.test(emotionVideo) ||
+                drowsinessVideo === "" ||
+                !videoExtensionRegex.test(drowsinessVideo) ||
+                depthVideo === "" ||
+                !videoExtensionRegex.test(depthVideo) ||
+                distractionVideo === "" ||
+                !videoExtensionRegex.test(distractionVideo)
+            ) {
+                alert("Please enter valid video files for all inputs.");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
